@@ -25,7 +25,14 @@ SECRET_KEY = "django-insecure-hx#hxar0)fnmt1-3=2*_$h@r_j+u5mfc-!cuxkw)6&f3cn0p^n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# settings.py
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'your-domain.com',  # if you have a custom domain
+    'ritesh-website-5882d34cfb6d.herokuapp.com'  # add your Heroku app's domain
+]
 
 
 # Application definition

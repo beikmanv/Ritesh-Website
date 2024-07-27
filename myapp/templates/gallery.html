@@ -15,12 +15,6 @@
             max-width: 100%;
             height: auto;
         }
-        .gallery-item {
-            background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent background to gallery items */
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
         .container {
             background-color: rgba(255, 255, 255, 0.8); /* Optional: Lighten container background for readability */
             padding: 20px;
@@ -29,15 +23,16 @@
         h1 {
             text-align: center;
             margin-bottom: 40px;
+            color: rgba(87, 87, 173, 0.649);  /* Change text color to blue */
         }
         .upload-btn-wrapper {
             text-align: center; /* Center the button */
             margin-top: 20px;
         }
-        .upload-btn {
-            width: 25%;  /* Quarter of the screen size */
-            padding: 20px;
-            font-size: 1.5em;
+        .btn-large {
+            width: 100%;  /* Full width */
+            padding: 20px;  /* Increased padding */
+            font-size: 1.5em;  /* Larger font size */
             background-color: #007bff;
             color: white;
             border: none;
@@ -57,19 +52,25 @@
         <div class="row">
             {% for image in images %}
             <div class="col-md-4 mb-4">
-                <div class="gallery-item card">
-                    <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.title }}">
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" class="card-img-top" alt="Image">
                     <div class="card-body">
-                        <h5 class="card-title">{{ image.title }}</h5>
                         <p class="card-text">{{ image.description }}</p>
+                        <a href="{% url 'delete_image' image.id %}" class="btn btn-danger btn-small">Delete</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
         <div class="upload-btn-wrapper">
-            <a href="{% url 'upload_image' %}" class="upload-btn">Upload More Images</a>
+            <a href="{% url 'upload_image' %}" class="btn btn-primary btn-large">Upload More Images</a>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+  

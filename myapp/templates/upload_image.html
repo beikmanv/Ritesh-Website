@@ -3,18 +3,26 @@
 <head>
     <title>Upload Image</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        .btn-large {
+            width: 100%;  /* Full width */
+            padding: 20px;  /* Increased padding */
+            font-size: 1.5em;  /* Larger font size */
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Upload Image</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Upload</button>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                {{ form.image }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">Upload</button>
         </form>
-        <a href="{% url 'gallery' %}" class="btn btn-link mt-3">View Gallery</a>
+        <a href="{% url 'gallery' %}" class="btn btn-secondary btn-large mt-3">View Gallery</a>
     </div>
 </body>
 </html>

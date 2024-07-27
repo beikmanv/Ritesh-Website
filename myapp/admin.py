@@ -1,5 +1,5 @@
-# admin.py
 from django.contrib import admin
-from .models import ImageGallery
+from .models import Image  # Ensure this matches the model name
 
-admin.site.register(ImageGallery)
+admin.site.register(Image)
+

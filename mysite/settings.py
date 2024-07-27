@@ -1,5 +1,4 @@
 
-=======
 import os
 from pathlib import Path
 
@@ -54,13 +53,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
->>>>>>> 9a2fbf3 (Remove AWS credentials from settings.py)
             ],
         },
     },
 ]
 
-=======
 # WSGI application
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -87,7 +84,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-B
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -120,4 +117,5 @@ AWS_DEFAULT_ACL = None
 # Additional settings can be added here as needed
 
 
->>>>>>> 9a2fbf3 (Remove AWS credentials from settings.py)
+
+
